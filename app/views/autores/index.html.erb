@@ -1,5 +1,4 @@
-<h1>Listing autores</h1>
-
+<h1>Listado de autores</h1>
 <table>
   <tr>
     <th>Nombre</th>
@@ -7,22 +6,20 @@
     <th>Email</th>
     <th>Telefonos</th>
     <th>Biografia</th>
+    <th colspan="3">Acciones</th>
   </tr>
-
 <% for autor in @autores %>
   <tr>
     <td><%=h autor.nombre %></td>
     <td><%=h autor.apellidos %></td>
     <td><%=h autor.email %></td>
     <td><%=h autor.telefonos %></td>
-    <td><%=h autor.biografia %></td>
-    <td><%= link_to 'Show', autor %></td>
-    <td><%= link_to 'Edit', edit_autor_path(autor) %></td>
-    <td><%= link_to 'Destroy', autor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h truncate(autor.biografia, 100) %></td>
+    <td><%= link_to 'Mostrar', autor %></td>
+    <td><%= link_to 'Editar', edit_autor_path(autor) %></td>
+    <td><%= link_to 'Borrar', autor, :confirm => 'Esta seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
-
-<%= link_to 'New autor', new_autor_path %>
+<%= link_to 'Nuevo autor', new_autor_path %>

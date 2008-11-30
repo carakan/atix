@@ -1,9 +1,9 @@
 class RevistasController < ApplicationController
   # GET /revistas
   # GET /revistas.xml
-  def index
-    @revistas = Revista.find(:all)
-
+  def index   
+      @revistas = Revista.all
+ 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @revistas }

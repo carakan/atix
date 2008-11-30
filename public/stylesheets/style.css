@@ -1,0 +1,100 @@
+/* 
+Author     : Carlos Ramos
+*/
+
+* {
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   13px;
+}
+table{
+    width:100%;
+}
+td{
+    padding:5px;
+}
+th{
+    background-color:#008CFF;
+    color:#FFF;
+    padding:5px;
+    text-align:center;
+}
+tr:hover{
+    background-color:#FFF9DF;
+}
+label{
+    font-weight:bold;
+    width:200px;
+    float:left;
+}
+input, textarea{
+    padding:3px;
+}
+form p{
+    margin:10px 0;
+}
+a{
+    text-decoration:none;
+    color:#008CFF;
+}
+a:hover{
+    color:#003D6F;
+}
+/*** Header ****/
+.header{
+    height:100px;
+    width:800px;
+    margin:0 auto;
+}
+.header h1 a{
+    margin:10px;
+}
+.menu{
+    float:right;
+    margin:10px;
+}
+/**** body ****/
+.body{
+    width:800px;
+    margin:0 auto;
+}
+.body h1, .body h2{
+    margin:10px 0;
+    font-size:18px;
+    color:#001C9F;
+}
+.body p{
+    margin:10px 0;
+}
+.body a{
+    padding:5px;
+}
+.medio {
+    text-align:center;
+}
+/*** errores *****/
+.errorExplanation{
+    background-color:#FFDFDF;
+}
+.errorExplanation{
+    padding:20px;
+}
+.errorExplanation h2{
+    color:#BF0000;
+    font-size:15px;
+}
+.errorExplanation ul, .errorExplanation li{
+    margin-left:10px;
+}
+.fieldWithErrors input, .fieldWithErrors textarea{
+    border: 1px solid #BF0000;
+}
+.fieldWithErrors label{
+    color: #BF0000;
+}
+.clear{
+    clear:both;
+}

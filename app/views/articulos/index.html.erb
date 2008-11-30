@@ -1,26 +1,23 @@
-<h1>Listing articulos</h1>
-
+<h1>Listado de articulos</h1>
 <table>
   <tr>
     <th>Titulo</th>
     <th>Contenido</th>
     <th>Revista</th>
     <th>Autor</th>
+    <th colspan="3">Acciones</th>
   </tr>
-
 <% for articulo in @articulos %>
   <tr>
     <td><%=h articulo.titulo %></td>
     <td><%=h articulo.contenido %></td>
-    <td><%=h articulo.revista %></td>
-    <td><%=h articulo.autor %></td>
-    <td><%= link_to 'Show', articulo %></td>
-    <td><%= link_to 'Edit', edit_articulo_path(articulo) %></td>
-    <td><%= link_to 'Destroy', articulo, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to(articulo.revista.nombre, articulo.revista, :title => articulo.revista.nombre) if articulo.autor %></td>
+    <td><%= link_to(articulo.autor.nombre, articulo.autor, :title => articulo.autor.nombre) if articulo.autor %></td>
+    <td><%= link_to 'Mostrar', articulo %></td>
+    <td><%= link_to 'Editar', edit_articulo_path(articulo) %></td>
+    <td><%= link_to 'Borrar', articulo, :confirm => 'Esta seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
-
-<%= link_to 'New articulo', new_articulo_path %>
+<%= link_to 'Nuevo articulo', new_articulo_path %>

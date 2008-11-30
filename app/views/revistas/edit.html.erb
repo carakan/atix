@@ -1,28 +1,28 @@
-<h1>Editing revista</h1>
+<h1>Editar revista</h1>
 
 <% form_for(@revista) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :nombre %><br />
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </p>
   <p>
-    <%= f.label :fecha_publicacion %><br />
+    <%= f.label :fecha_publicacion %>
     <%= f.datetime_select :fecha_publicacion %>
   </p>
   <p>
-    <%= f.label :numero %><br />
+    <%= f.label :numero %>
     <%= f.text_field :numero %>
   </p>
   <p>
-    <%= f.label :editorial %><br />
+    <%= f.label :editorial %>
     <%= f.text_area :editorial %>
   </p>
-  <p>
-    <%= f.submit "Update" %>
+  <p class="medio">
+    <%= f.submit "Actualizar" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @revista %> |
-<%= link_to 'Back', revistas_path %>
+<%= link_to 'Mostrar', @revista %> |
+<%= link_to 'Atras', revistas_path %>

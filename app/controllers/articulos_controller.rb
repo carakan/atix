@@ -2,7 +2,11 @@ class ArticulosController < ApplicationController
   # GET /articulos
   # GET /articulos.xml
   def index
-    @articulos = Articulo.find(:all)
+    if params[:revista_id]
+      @articulos = Articulo.all(:conditions => ["revista_id = ?", params[:revista_id]])
+    else
+      @articulos = Articulo.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

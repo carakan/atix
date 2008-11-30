@@ -1,27 +1,27 @@
-<h1>New articulo</h1>
+<h1>Nuevo articulo</h1>
 
 <% form_for(@articulo) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :titulo %><br />
+    <%= f.label :titulo %>
     <%= f.text_field :titulo %>
   </p>
   <p>
-    <%= f.label :contenido %><br />
+    <%= f.label :contenido %>
     <%= f.text_area :contenido %>
   </p>
   <p>
-    <%= f.label :revista %><br />
+    <%= f.label :revista %>
     <%= f.select :revista_id, Revista.all.collect{|x| [x.nombre, x.id]} %>
   </p>
   <p>
-    <%= f.label :autor %><br />
+    <%= f.label :autor %>
     <%= f.select :autor_id, Autor.all.collect{|x| [x.nombre + " " + x.apellidos, x.id]} %>
   </p>
-  <p>
-    <%= f.submit "Create" %>
+  <p class="medio">
+    <%= f.submit "Crear" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', articulos_path %>
+<%= link_to 'Atras', articulos_path %>

@@ -1,26 +1,26 @@
-<h1>Listing revistas</h1>
-
+<h1>Listado de revistas</h1>
 <table>
   <tr>
     <th>Nombre</th>
     <th>Fecha publicacion</th>
     <th>Numero</th>
     <th>Editorial</th>
+    <th>Publicado</th>
+    <th colspan="4">Acciones</th>
   </tr>
-
 <% for revista in @revistas %>
   <tr>
     <td><%=h revista.nombre %></td>
     <td><%=h revista.fecha_publicacion %></td>
     <td><%=h revista.numero %></td>
-    <td><%=h truncate(revista.editorial, 150) %></td>
-    <td><%= link_to 'Show', revista %></td>
-    <td><%= link_to 'Edit', edit_revista_path(revista) %></td>
-    <td><%= link_to 'Destroy', revista, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h truncate(revista.editorial, 100) %></td>
+    <td><%=h revista.created_at.strftime("%Y/%m/%d") %></td>
+    <td><%= link_to 'Articulos', revista_articulos_path(revista) %></td>
+    <td><%= link_to 'Mostrar', revista %></td>
+    <td><%= link_to 'Editar', edit_revista_path(revista) %></td>
+    <td><%= link_to 'Borrar', revista, :confirm => 'Esta seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
-
-<%= link_to 'New revista', new_revista_path %>
+<%= link_to 'Nuevo revista', new_revista_path %>

@@ -1,28 +1,25 @@
-<h1>Editing articulo</h1>
-
+<h1>Editar articulo</h1>
 <% form_for(@articulo) do |f| %>
   <%= f.error_messages %>
-
   <p>
-    <%= f.label :titulo %><br />
+    <%= f.label :titulo %>
     <%= f.text_field :titulo %>
   </p>
   <p>
-    <%= f.label :contenido %><br />
+    <%= f.label :contenido %>
     <%= f.text_area :contenido %>
   </p>
   <p>
-    <%= f.label :revista %><br />
+    <%= f.label :revista %>
     <%= f.text_field :revista %>
   </p>
   <p>
-    <%= f.label :autor %><br />
+    <%= f.label :autor %>
     <%= f.text_field :autor %>
   </p>
-  <p>
-    <%= f.submit "Update" %>
+  <p class="medio">
+    <%= f.submit "Actualizar" %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @articulo %> |
-<%= link_to 'Back', articulos_path %>
+<%= link_to 'Mostrar', @articulo %> |
+<%= link_to 'Atras', articulos_path %>

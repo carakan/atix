@@ -14,6 +14,6 @@
 
 class Articulo < ActiveRecord::Base
   validates_presence_of :titulo, :contenido
-  belongs_to :autor
   belongs_to :revista
+  belongs_to :autor
 end

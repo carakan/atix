@@ -1,32 +1,32 @@
-<h1>Editing autor</h1>
+<h1>Editar autor</h1>
 
 <% form_for(@autor) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :nombre %><br />
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </p>
   <p>
-    <%= f.label :apellidos %><br />
+    <%= f.label :apellidos %>
     <%= f.text_field :apellidos %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :telefonos %><br />
+    <%= f.label :telefonos %>
     <%= f.text_field :telefonos %>
   </p>
   <p>
-    <%= f.label :biografia %><br />
+    <%= f.label :biografia %>
     <%= f.text_area :biografia %>
   </p>
-  <p>
-    <%= f.submit "Update" %>
+  <p class="medio">
+    <%= f.submit "Actualizar" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @autor %> |
-<%= link_to 'Back', autores_path %>
+<%= link_to 'Mostrar', @autor %> |
+<%= link_to 'Atras', autores_path %>
