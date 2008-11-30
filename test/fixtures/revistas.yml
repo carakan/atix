@@ -1,0 +1,27 @@
+# == Schema Information
+# Schema version: 20081011115257
+#
+# Table name: revistas
+#
+#  id                :integer(4)      not null, primary key
+#  nombre            :string(255)
+#  fecha_publicacion :datetime
+#  numero            :integer(4)
+#  editorial         :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  fecha_publicacion: 2008-10-11 07:20:20
+  numero: 1
+  editorial: MyText
+
+two:
+  nombre: MyString
+  fecha_publicacion: 2008-10-11 07:20:20
+  numero: 1
+  editorial: MyText

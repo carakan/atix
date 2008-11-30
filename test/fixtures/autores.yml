@@ -1,0 +1,30 @@
+# == Schema Information
+# Schema version: 20081011115257
+#
+# Table name: autores
+#
+#  id         :integer(4)      not null, primary key
+#  nombre     :string(255)
+#  apellidos  :string(255)
+#  email      :string(255)
+#  telefonos  :string(255)
+#  biografia  :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  apellidos: MyString
+  email: MyString
+  telefonos: MyString
+  biografia: MyText
+
+two:
+  nombre: MyString
+  apellidos: MyString
+  email: MyString
+  telefonos: MyString
+  biografia: MyText

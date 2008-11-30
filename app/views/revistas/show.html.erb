@@ -1,0 +1,23 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @revista.nombre %>
+</p>
+
+<p>
+  <b>Fecha publicacion:</b>
+  <%=h @revista.fecha_publicacion %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%=h @revista.numero %>
+</p>
+
+<p>
+  <b>Editorial:</b>
+  <%=h @revista.editorial %>
+</p>
+
+
+<%= link_to 'Edit', edit_revista_path(@revista) %> |
+<%= link_to 'Back', revistas_path %>

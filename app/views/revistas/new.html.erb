@@ -1,0 +1,27 @@
+<h1>New revista</h1>
+
+<% form_for(@revista) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :fecha_publicacion %><br />
+    <%= f.datetime_select :fecha_publicacion %>
+  </p>
+  <p>
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </p>
+  <p>
+    <%= f.label :editorial %><br />
+    <%= f.text_area :editorial %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', revistas_path %>

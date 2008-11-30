@@ -1,0 +1,23 @@
+<p>
+  <b>Titulo:</b>
+  <%=h @articulo.titulo %>
+</p>
+
+<p>
+  <b>Contenido:</b>
+  <%=h @articulo.contenido %>
+</p>
+
+<p>
+  <b>Revista:</b>
+  <%=h @articulo.revista %>
+</p>
+
+<p>
+  <b>Autor:</b>
+  <%=h @articulo.autor %>
+</p>
+
+
+<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
+<%= link_to 'Back', articulos_path %>

@@ -1,0 +1,32 @@
+<h1>Editing autor</h1>
+
+<% form_for(@autor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :apellidos %><br />
+    <%= f.text_field :apellidos %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :telefonos %><br />
+    <%= f.text_field :telefonos %>
+  </p>
+  <p>
+    <%= f.label :biografia %><br />
+    <%= f.text_area :biografia %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @autor %> |
+<%= link_to 'Back', autores_path %>

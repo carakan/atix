@@ -1,0 +1,26 @@
+<h1>Listing articulos</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Contenido</th>
+    <th>Revista</th>
+    <th>Autor</th>
+  </tr>
+
+<% for articulo in @articulos %>
+  <tr>
+    <td><%=h articulo.titulo %></td>
+    <td><%=h articulo.contenido %></td>
+    <td><%=h articulo.revista %></td>
+    <td><%=h articulo.autor %></td>
+    <td><%= link_to 'Show', articulo %></td>
+    <td><%= link_to 'Edit', edit_articulo_path(articulo) %></td>
+    <td><%= link_to 'Destroy', articulo, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New articulo', new_articulo_path %>

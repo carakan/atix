@@ -1,0 +1,28 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @autor.nombre %>
+</p>
+
+<p>
+  <b>Apellidos:</b>
+  <%=h @autor.apellidos %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @autor.email %>
+</p>
+
+<p>
+  <b>Telefonos:</b>
+  <%=h @autor.telefonos %>
+</p>
+
+<p>
+  <b>Biografia:</b>
+  <%=h @autor.biografia %>
+</p>
+
+
+<%= link_to 'Edit', edit_autor_path(@autor) %> |
+<%= link_to 'Back', autores_path %>
