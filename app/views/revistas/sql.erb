@@ -1,0 +1,20 @@
+<h1>Listado de autores por revistas</h1>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Fecha publicacion</th>
+    <th>Titulo articulo</th>
+    <th>titulo revista</th>
+    
+  </tr>
+<% for autor in @autores %>
+  <tr>
+    
+    <td><%= "#{autor.nombre} #{autor.apellidos}"  %></td>
+    <td><%=h autor.fecha_publicacion.strftime("%Y/%m/%d") %></td>
+    <td><%=h autor.titulo_articulo %></td>
+    <td><%=h autor.nombre_revista %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @autores %>

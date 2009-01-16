@@ -2,12 +2,30 @@ class RevistasController < ApplicationController
   # GET /revistas
   # GET /revistas.xml
   def index   
-      @revistas = Revista.all
- 
+    @revistas = Revista.paginate(:page => params[:page], :per_page => 10)
+    
+    # Consulta compuesta
+    # @revistas = Revista.paginate(:page => params[:page], :conditions => ["fecha_publicacion > ?", 1.month.ago], :order => 'fecha_publicacion', :per_page => 10)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @revistas }
     end
+  end
+
+  def sql
+    sql = ["SELECT
+              revistas.nombre as nombre_revista,
+              revistas.fecha_publicacion,
+              articulos.titulo as titulo_articulo,
+              autores.nombre,
+              autores.apellidos
+            FROM
+              articulos
+              INNER JOIN autores ON (articulos.autor_id = autores.id)
+              INNER JOIN revistas ON (articulos.revista_id = revistas.id)
+            WHERE
+              revistas.id = ?", params[:id]]
+    @autores = Revista.paginate_by_sql(sql, :page => params[:page], :per_page => 10)
   end
 
   # GET /revistas/1

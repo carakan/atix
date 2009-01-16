@@ -16,4 +16,4 @@ class Revista < ActiveRecord::Base
   validates_presence_of :nombre, :editorial
   validates_numericality_of :numero
   has_many :articulos
-end
+end  

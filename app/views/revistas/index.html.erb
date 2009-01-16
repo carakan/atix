@@ -5,16 +5,14 @@
     <th>Fecha publicacion</th>
     <th>Numero</th>
     <th>Editorial</th>
-    <th>Publicado</th>
     <th colspan="4">Acciones</th>
   </tr>
 <% for revista in @revistas %>
   <tr>
-    <td><%=h revista.nombre %></td>
-    <td><%=h revista.fecha_publicacion %></td>
+    <td><%= link_to(revista.nombre, sql_revista_path(revista)) %></td>
+    <td><%=h revista.fecha_publicacion.strftime("%Y/%m/%d") %></td>
     <td><%=h revista.numero %></td>
-    <td><%=h truncate(revista.editorial, 100) %></td>
-    <td><%=h revista.created_at.strftime("%Y/%m/%d") %></td>
+    <td><%=h truncate(revista.editorial, :length => 100) %></td>
     <td><%= link_to 'Articulos', revista_articulos_path(revista) %></td>
     <td><%= link_to 'Mostrar', revista %></td>
     <td><%= link_to 'Editar', edit_revista_path(revista) %></td>
@@ -22,5 +20,6 @@
   </tr>
 <% end %>
 </table>
+<%= will_paginate @revistas %>
 <br />
 <%= link_to 'Nuevo revista', new_revista_path %>

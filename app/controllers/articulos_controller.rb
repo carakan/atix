@@ -3,9 +3,9 @@ class ArticulosController < ApplicationController
   # GET /articulos.xml
   def index
     if params[:revista_id]
-      @articulos = Articulo.all(:conditions => ["revista_id = ?", params[:revista_id]])
+      @articulos = Articulo.all(:conditions => ["revista_id = ?", params[:revista_id]]).paginate(:page => params[:page], :per_page => 10)
     else
-      @articulos = Articulo.all
+      @articulos = Articulo.paginate(:page => params[:page], :per_page => 10)
     end
 
     respond_to do |format|
