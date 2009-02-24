@@ -61,7 +61,7 @@ class RevistasController < ApplicationController
     @revista = Revista.new(params[:revista])
 
     respond_to do |format|
-      if @revista.save
+      if current_user.admin? && @revista.save
         flash[:notice] = 'Revista was successfully created.'
         format.html { redirect_to(@revista) }
         format.xml  { render :xml => @revista, :status => :created, :location => @revista }

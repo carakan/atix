@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081011115257) do
+ActiveRecord::Schema.define(:version => 20090223223209) do
 
   create_table "articulos", :force => true do |t|
     t.string   "titulo"
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(:version => 20081011115257) do
     t.datetime "updated_at"
   end
 
+  create_table "correspondencias", :force => true do |t|
+    t.datetime "fecha"
+    t.text     "origen"
+    t.string   "cite"
+    t.integer  "hojas"
+    t.text     "referencia"
+    t.string   "destino1"
+    t.string   "destino2"
+    t.string   "destino3"
+    t.string   "destino4"
+    t.string   "destino5"
+    t.string   "documento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "revistas", :force => true do |t|
     t.string   "nombre"
     t.datetime "fecha_publicacion"
@@ -38,5 +54,20 @@ ActiveRecord::Schema.define(:version => 20081011115257) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
+    t.boolean  "admin",                                    :default => false
+  end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end

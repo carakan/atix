@@ -140,3 +140,10 @@ a:hover{
     height: 0;
     clear: both;
     visibility: hidden; }
+
+/* Flash mesages */
+#flash{
+    padding:10px;
+    background-color:#DFFFE3;
+    border: solid 1px #00AF18;
+}

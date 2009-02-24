@@ -10,7 +10,7 @@
 <% for articulo in @articulos %>
   <tr>
     <td><%=h articulo.titulo %></td>
-    <td><%=h articulo.contenido %></td>
+    <td><%=h truncate(articulo.contenido, 100) %></td>
     <td><%= link_to(articulo.revista.nombre, articulo.revista, :title => articulo.revista.nombre) if articulo.autor %></td>
     <td><%= link_to(articulo.autor.nombre, articulo.autor, :title => articulo.autor.nombre) if articulo.autor %></td>
     <td><%= link_to 'Mostrar', articulo %></td>
@@ -20,6 +20,5 @@
 <% end %>
 </table>
 <br />
+<%= will_paginate @articulos %><br>
 <%= link_to 'Nuevo articulo', new_articulo_path %>
-<br />
-<%= will_paginate @articulos %>

@@ -22,4 +22,4 @@
 </table>
 <%= will_paginate @revistas %>
 <br />
-<%= link_to 'Nuevo revista', new_revista_path %>
+<%= link_to('Nueva revista', new_revista_path) if current_user.admin? %>

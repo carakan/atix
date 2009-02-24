@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -9,14 +8,24 @@
   </head>
   <body>
     <div class="header">
-      <div class="menu">
-        <%= link_to("Revistas", revistas_path, :title => "Listado de Revistas") %> | <%= link_to("Articulos", articulos_path, :title => "Listado de Articulos") %> | <%= link_to("Autores", autores_path, :title => "Listado de Autores") %>
-      </div>
+      <% if logged_in? && current_user.admin? %>
+        <div class="menu">
+          <%= link_to("Revistas", revistas_path, :title => "Listado de Revistas") %> | <%= link_to("Articulos", articulos_path, :title => "Listado de Articulos") %> | <%= link_to("Autores", autores_path, :title => "Listado de Autores") %>
+          <%= " | #{link_to("Usuarios", users_path)}" if current_user.admin? %>
+          | <%= link_to("Salir", '/logout')  %>
+        </div>
+      <% else %>
+        <div class="menu">
+          <%= link_to("Identificarse", '/login')  %>
+        </div>
+      <% end %>
       <br class="clear">
       <h1><%= link_to("Sistema de registros de Atix", root_path, :title => "Sistema de archivo de Revistas") %></h1>
     </div>
     <div class="body">
-      <p style="color: green"><%= flash[:notice] %></p>
+      <% flash.each do |key, msg| -%>
+        <%= content_tag :div, msg, :class => key, :id => 'flash' -%>
+      <% end -%>
       <%= yield  %>
     </div>
   </body>

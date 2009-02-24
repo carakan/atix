@@ -1,0 +1,22 @@
+<h4>Listado de Usuarios</h4>
+<table>
+  <tr>
+    <th>login</th>
+    <th>email</th>
+    <th>rol</th>
+    
+  </tr>
+<% for user in @users %>
+  <tr>
+    
+    <td><%=h user.login %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.admin? ? 'admin' : 'usuario' %></td>
+    
+    <td><%= link_to 'Borrar', user, :confirm => 'Esta seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @users %>
+<br />
+<%= link_to 'Nuevo usuario', new_user_path %>
