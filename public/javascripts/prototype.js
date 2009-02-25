@@ -1581,7 +1581,7 @@ Element.Methods = {
 
   toggle: function(element) {
     element = $(element);
-    Element[Element.visible(element) ? 'hide' : 'Mostrar'](element);
+    Element[Element.visible(element) ? 'hide' : 'show'](element);
     return element;
   },
 
