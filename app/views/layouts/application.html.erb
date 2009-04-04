@@ -5,20 +5,21 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Sistema Atix</title>
     <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag :defaults, :cache => 'atix' %>
   </head>
   <body>
     <div class="header">
-      <% if logged_in? && current_user.admin? %>
+      <% if logged_in? && current_user.admin? -%>
         <div class="menu">
           <%= link_to("Revistas", revistas_path, :title => "Listado de Revistas") %> | <%= link_to("Articulos", articulos_path, :title => "Listado de Articulos") %> | <%= link_to("Autores", autores_path, :title => "Listado de Autores") %>
           <%= " | #{link_to("Usuarios", users_path)}" if current_user.admin? %>
           | <%= link_to("Salir", '/logout')  %>
         </div>
-      <% else %>
+      <% else -%>
         <div class="menu">
           <%= link_to("Identificarse", '/login')  %>
         </div>
-      <% end %>
+      <% end -%>
       <br class="clear">
       <h1><%= link_to("Sistema de registros de Atix", root_path, :title => "Sistema de archivo de Revistas") %></h1>
     </div>

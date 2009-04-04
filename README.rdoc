@@ -1,0 +1,19 @@
+== Proyecto ATIX
+
+Sistema demo para el tutorial realizado para la revista atix.
+
+Capitulo 1
+
+Introduccion a Rails
+
+== Capitulo 2
+
+== Capitulo 3
+
+== Capitulo 4
+
+Manejo de la autentificacion mediante el plugin *Restful-Autentification*
+
+== Capitulo 5
+
+Trabajo con *Ajax*, manejo del login mediante ajax

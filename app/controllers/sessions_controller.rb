@@ -7,23 +7,31 @@ class SessionsController < ApplicationController
 
   def create
     logout_keeping_session!
-    user = User.authenticate(params[:login], params[:password])
-    if user
+    @user = User.authenticate(params[:login], params[:password])
+    if @user
       # Protects against session fixation attacks, causes request forgery
       # protection if user resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset_session
-      self.current_user = user
+      self.current_user = @user
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/')
       flash[:notice] = "Logged in successfully"
+      respond_to do |format|
+        format.html { redirect_back_or_default('/') }
+        format.js
+      end
     else
       note_failed_signin
       @login       = params[:login]
       @remember_me = params[:remember_me]
-      render :action => 'new'
+      respond_to do |format|
+        format.html { render :action => 'new' }
+        format.js
+      end
     end
+
+
   end
 
   def destroy
@@ -32,7 +40,7 @@ class SessionsController < ApplicationController
     redirect_back_or_default('/')
   end
 
-protected
+  protected
   # Track failed login attempts
   def note_failed_signin
     flash[:error] = "Couldn't log you in as '#{params[:login]}'"

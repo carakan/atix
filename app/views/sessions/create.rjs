@@ -1,0 +1,11 @@
+if @user
+  page[:mensaje].replace_html('Se logueo satisfactoriamente.')
+  page << "document.location.href = '/revistas';"
+else
+  page[:mensaje].replace_html('Usuario y contraseña equivocados.')
+end
+page[:mensaje].visual_effect :Highlight, :startcolor => '#FDFF00'
+page.delay(2.5) do
+  page.visual_effect :fade, 'mensaje'
+end
+flash.discard

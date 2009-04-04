@@ -147,3 +147,7 @@ a:hover{
     background-color:#DFFFE3;
     border: solid 1px #00AF18;
 }
+#mensaje{
+    background:#FFFFDF;
+    padding:10px;
+}
