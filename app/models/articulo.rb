@@ -16,4 +16,10 @@ class Articulo < ActiveRecord::Base
   validates_presence_of :titulo, :contenido
   belongs_to :revista
   belongs_to :autor
+  
+  
+  def veamos_como
+    a=1
+    b==1
+  end
 end
