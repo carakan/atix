@@ -21,5 +21,7 @@ class Articulo < ActiveRecord::Base
   def veamos_como
     a=1
     b==1
+    
+    true
   end
 end

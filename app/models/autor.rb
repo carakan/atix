@@ -16,4 +16,9 @@
 class Autor < ActiveRecord::Base
   validates_presence_of :nombre, :apellidos, :email
   has_many :articulos
+  
+  def lalala
+  1-1
+  
+  end
 end
