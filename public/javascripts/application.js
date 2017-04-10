@@ -7,4 +7,11 @@ function demo()
 {
   
 alert("demo")
+
+another test()
+1=2
+i=908;
+if true
+lalala()
+
 }
